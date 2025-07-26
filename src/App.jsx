@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Toaster } from 'react-hot-toast'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes ,} from 'react-router-dom'
 import './App.css'
 import { DarkModeProvider } from './context/DarkThemProvider'
 import AdminLayout from './features/admin/AdminLayout'
@@ -22,12 +22,13 @@ import Home from './pages/Home'
 const queryClient= new QueryClient()
 
 function App() {
+
   return (
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
       <Toaster/>
       <Routes>
-        <Route path="login" element={<Auth/>} />
+        <Route path="/login" element={<Auth/>} />
         <Route path="/setting" element={<CompleteProfile/>} />
         <Route path="/owner" element={<OwnerLayout/>} >
           <Route index element={<Navigate to="dashboard"/>}/>
@@ -49,7 +50,7 @@ function App() {
           <Route path="projects" element={<SubmitedProjects/>} />
         </Route>
         <Route path='*' element={<NotFound/>} />
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<Navigate to='/login'/>} />
       </Routes>
       </QueryClientProvider>
     </DarkModeProvider>
