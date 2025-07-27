@@ -34,7 +34,7 @@ function CheckOtp({phoneNumber,step, setStep, onResendOtp, otpCode}) {
         toast.success(message)
         if(!user.isActive) return navigate("/setting");
         if(user.status !== 2) {
-          navigate('/')
+          // navigate('/')
           toast.error("پروفایل شما در انتظار تایید")
           return
         };

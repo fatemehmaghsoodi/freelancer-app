@@ -23,7 +23,7 @@ function CompleteProfileForm() {
       onSuccess:(data)=>{
         const user= data.user
       if(user.status !== 2) {
-        navigate('/')
+        // navigate('/')
         toast.error("پروفایل شما در انتظار تایید")
         return
       };
