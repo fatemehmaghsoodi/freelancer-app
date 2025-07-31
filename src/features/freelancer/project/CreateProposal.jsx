@@ -70,8 +70,8 @@ function CreateProposal({onClose, projectId}) {
             />
             
             {isCreating
-            ?<button className='btn btn--secondary' type="submit">ارسال</button>
-            :<Loading/>
+            ?<Loading/>
+            :<button className='btn btn--secondary' type="submit">ارسال</button>
             }
            
         </form>
